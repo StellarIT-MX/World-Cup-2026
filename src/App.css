@@ -133,7 +133,7 @@
 .col--r16 { justify-content: space-around; }
 .col--qf { justify-content: space-around; }
 .col--sf { justify-content: space-around; }
-.col--final { justify-content: center; }
+.col--final { justify-content: center; min-width: 240px; }
 
 .ko-match {
   position: relative;
@@ -160,6 +160,41 @@
 .ko-slot.is-loser { opacity: .5; }
 .ko-slot.is-pickable { cursor: pointer; }
 .ko-slot.is-pickable:hover { outline: 1px solid var(--accent-2); }
+
+/* ---------- Podium banner ---------- */
+@keyframes podium-in {
+  from { opacity: 0; transform: translateY(18px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);   }
+}
+.podium-banner {
+  padding: 14px 10px;
+  margin-bottom: 50px;
+  background: linear-gradient(145deg, var(--card) 0%, rgba(52,211,153,.07) 100%);
+  border: 1px solid rgba(52,211,153,.3);
+  border-radius: var(--radius);
+  text-align: center;
+  animation: podium-in .45s ease both;
+}
+.podium-champion {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  margin-bottom: 20px;
+}
+.podium-trophy { font-size: 2.6rem; line-height: 1; }
+.podium-champion-name {
+  font-size: 1.2rem; font-weight: 800; color: var(--text);
+  margin-top: 4px;
+}
+.podium-champion-title {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--accent);
+}
+.podium-others {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+  border-top: 1px solid var(--line); padding-top: 12px; margin-top: 4px;
+}
+.podium-slot { display: flex; align-items: center; gap: 8px; }
+.podium-medal { font-size: 1.3rem; line-height: 1; }
+.podium-slot-name { font-size: 0.88rem; font-weight: 600; color: var(--text); }
 
 /* ---------- Footer ---------- */
 .footer { margin-top: 28px; color: var(--muted); font-size: 12px; text-align: center; border-top: 1px solid var(--line); padding-top: 14px; }

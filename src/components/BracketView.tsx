@@ -1,6 +1,6 @@
 import type { BracketMatch, SlotState } from '../domain/bracket';
 import { STAGE_LABEL } from '../domain/bracket';
-import type { Stage } from '../domain/types';
+import type { Stage, Team } from '../domain/types';
 import type { UseTournament } from '../hooks/useTournament';
 import { Flag } from './Flag';
 import { formatMatchTime } from '../utils/dateUtils';
@@ -65,6 +65,45 @@ function MatchCard({ m, t }: { m: BracketMatch; t: UseTournament }) {
   );
 }
 
+function PodiumBanner({ bracket, teamById }: { bracket: BracketMatch[]; teamById: Map<number, Team> }) {
+  const final = bracket.find((m) => m.stage === 'final');
+  if (!final?.winnerTeamId) return null;
+
+  const champion = teamById.get(final.winnerTeamId) ?? null;
+  const runnerUp = final.loserTeamId != null ? (teamById.get(final.loserTeamId) ?? null) : null;
+  const thirdMatch = bracket.find((m) => m.stage === 'third');
+  const third = thirdMatch?.winnerTeamId != null ? (teamById.get(thirdMatch.winnerTeamId) ?? null) : null;
+
+  return (
+    <div className="podium-banner">
+      <div className="podium-champion">
+        <span className="podium-trophy">🏆</span>
+        <Flag team={champion} size={60} />
+        <span className="podium-champion-name">{champion?.name}</span>
+        <span className="podium-champion-title">¡Campeón del Mundo FIFA 2026!</span>
+      </div>
+      {(runnerUp || third) && (
+        <div className="podium-others">
+          {runnerUp && (
+            <div className="podium-slot">
+              <span className="podium-medal">🥈</span>
+              <Flag team={runnerUp} size={30} />
+              <span className="podium-slot-name">{runnerUp.name}</span>
+            </div>
+          )}
+          {third && (
+            <div className="podium-slot">
+              <span className="podium-medal">🥉</span>
+              <Flag team={third} size={30} />
+              <span className="podium-slot-name">{third.name}</span>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function BracketView({ t }: { t: UseTournament }) {
   if (!t.state) return null;
   const bracket = t.state.bracket;
@@ -83,6 +122,7 @@ export function BracketView({ t }: { t: UseTournament }) {
           {COLUMN_STAGES.map((stage) => (
             <div key={stage} className={`bracket-col col--${stage}`}>
               <h4 className="col-title">{STAGE_LABEL[stage]}</h4>
+              {stage === 'final' && <PodiumBanner bracket={bracket} teamById={t.teamById} />}
               {byStage(stage).map((m) => <MatchCard key={m.id} m={m} t={t} />)}
               {stage === 'final' && third && (
                 <>
