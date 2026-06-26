@@ -18,13 +18,14 @@ function MatchRow({
   const played = result?.finished;
   const time = fixture.date ? fixture.date.slice(5, 16).replace('T', ' ') : '';
 
-  const onChange = (side: 'h' | 'a', value: string) => {
-    const h = side === 'h' ? value : String(result?.homeGoals ?? '');
-    const a = side === 'a' ? value : String(result?.awayGoals ?? '');
-    if (h === '' && a === '') { setOverride(fixture.id, null); return; }
+  const onChange = (side: 'h' | 'a', raw: string) => {
+    const value = raw.replace(/\D/g, '');
+    const hRaw = side === 'h' ? value : (result?.homeGoals != null ? String(result.homeGoals) : '');
+    const aRaw = side === 'a' ? value : (result?.awayGoals != null ? String(result.awayGoals) : '');
+    if (hRaw === '' && aRaw === '') { setOverride(fixture.id, null); return; }
     setOverride(fixture.id, {
-      homeGoals: Number(h || 0),
-      awayGoals: Number(a || 0),
+      homeGoals: hRaw === '' ? 0 : Number(hRaw),
+      awayGoals: aRaw === '' ? 0 : Number(aRaw),
       finished: true,
     });
   };
@@ -37,11 +38,15 @@ function MatchRow({
       </span>
       {simEnabled ? (
         <span className="mr-score mr-score--edit">
-          <input type="number" min="0" inputMode="numeric"
-            value={result ? result.homeGoals : ''} onChange={(e) => onChange('h', e.target.value)} />
+          <input type="text" inputMode="numeric" pattern="[0-9]*"
+            value={result?.homeGoals != null ? result.homeGoals : ''}
+            onFocus={(e) => e.target.select()}
+            onChange={(e) => onChange('h', e.target.value)} />
           <span>-</span>
-          <input type="number" min="0" inputMode="numeric"
-            value={result ? result.awayGoals : ''} onChange={(e) => onChange('a', e.target.value)} />
+          <input type="text" inputMode="numeric" pattern="[0-9]*"
+            value={result?.awayGoals != null ? result.awayGoals : ''}
+            onFocus={(e) => e.target.select()}
+            onChange={(e) => onChange('a', e.target.value)} />
         </span>
       ) : (
         <span className="mr-score">
