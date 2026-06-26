@@ -302,11 +302,13 @@
   "61": {
     "homeGoals": 1,
     "awayGoals": 0,
-    "finished": false
+    "finished": false,
+    "live": true
   },
   "62": {
     "homeGoals": 1,
     "awayGoals": 3,
-    "finished": false
+    "finished": false,
+    "live": true
   }
 }

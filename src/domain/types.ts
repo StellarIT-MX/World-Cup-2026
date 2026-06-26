@@ -48,6 +48,8 @@ export interface MatchResult {
   homeGoals: number;
   awayGoals: number;
   finished: boolean;
+  /** Partido en curso (marcador provisional, aún no terminado). */
+  live?: boolean;
   /** Penales (solo eliminatoria con empate en tiempo reglamentario). */
   homePens?: number;
   awayPens?: number;

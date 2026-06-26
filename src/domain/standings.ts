@@ -24,7 +24,7 @@ interface PlayedMatch {
   awayFairPlay: number;
 }
 
-/** Partidos de grupo TERMINADOS, normalizados. */
+/** Partidos de grupo terminados O en curso, normalizados. */
 export function playedGroupMatches(
   fixtures: Fixture[],
   results: ResultsMap,
@@ -34,7 +34,7 @@ export function playedGroupMatches(
   for (const f of fixtures) {
     if (f.stage !== 'group' || f.group !== group) continue;
     const r = results[String(f.id)];
-    if (!r || !r.finished) continue;
+    if (!r || (!r.finished && !r.live)) continue;
     if (f.home.kind !== 'team' || f.away.kind !== 'team') continue;
     out.push({
       homeId: f.home.teamId,

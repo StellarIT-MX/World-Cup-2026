@@ -2,7 +2,7 @@ import type { Fixture, GroupLetter, MatchResult, StandingRow, Team } from '../do
 import { GROUPS, groupComplete } from '../domain/standings';
 import type { UseTournament } from '../hooks/useTournament';
 import { Flag } from './Flag';
-import { formatMatchTime } from '../utils/dateUtils';
+import { formatMatchTime, matchGdlDateKey, todayGdlKey } from '../utils/dateUtils';
 
 function MatchRow({
   fixture, result, teamById, simEnabled, setOverride,
@@ -17,7 +17,7 @@ function MatchRow({
   const home = teamById.get(fixture.home.teamId);
   const away = teamById.get(fixture.away.teamId);
   const played = result?.finished;
-  const live = !played && result != null && result.homeGoals != null && result.awayGoals != null;
+  const live = result?.live ?? false;
   const time = fixture.date ? formatMatchTime(fixture.date, fixture.stadiumId) : '';
 
   const onChange = (side: 'h' | 'a', raw: string) => {
@@ -74,12 +74,27 @@ function GroupCard({ group, rows, t }: { group: GroupLetter; rows: StandingRow[]
     .filter((f) => f.stage === 'group' && f.group === group)
     .sort((a, b) => (a.matchday ?? 0) - (b.matchday ?? 0) || a.id - b.id);
 
+  const hasLive = matches.some((f) => results[String(f.id)]?.live);
+  const nextMatch = !complete && !hasLive
+    ? matches.filter((f) => !results[String(f.id)]?.finished && !results[String(f.id)]?.live && f.date)
+        .sort((a, b) => (a.date ?? '').localeCompare(b.date ?? ''))[0]
+    : null;
+  const nextDateKey = nextMatch?.date ? matchGdlDateKey(nextMatch.date, nextMatch.stadiumId) : null;
+  const nextDateLabel = nextDateKey
+    ? (nextDateKey === todayGdlKey() ? 'Hoy' : `${nextDateKey.slice(8)}/${nextDateKey.slice(5, 7)}`)
+    : null;
+
   return (
     <div className="card group-card">
       <div className="group-head">
         <h3>Grupo {group}</h3>
-        {complete ? <span className="badge badge--done">Completo</span>
-          : <span className="badge">En curso</span>}
+        {complete
+          ? <span className="badge badge--done">Completado</span>
+          : hasLive
+            ? <span className="badge badge--live">En curso</span>
+            : nextDateLabel
+              ? <span className="badge">{nextDateLabel}</span>
+              : null}
       </div>
       <table className="standings">
         <thead>

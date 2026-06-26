@@ -178,6 +178,7 @@ for (const g of games) {
     homeGoals: num(g.home_score) ?? 0,
     awayGoals: num(g.away_score) ?? 0,
     finished,
+    ...(live && !finished ? { live: true } : {}),
   };
 }
 
