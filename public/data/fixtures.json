@@ -1,0 +1,1722 @@
+[
+  {
+    "id": 1,
+    "date": "2026-06-11T13:00:00",
+    "stadiumId": 1,
+    "stage": "group",
+    "group": "A",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 1
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 2
+    }
+  },
+  {
+    "id": 2,
+    "date": "2026-06-11T20:00:00",
+    "stadiumId": 2,
+    "stage": "group",
+    "group": "A",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 3
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 4
+    }
+  },
+  {
+    "id": 3,
+    "date": "2026-06-12T15:00:00",
+    "stadiumId": 12,
+    "stage": "group",
+    "group": "B",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 5
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 6
+    }
+  },
+  {
+    "id": 4,
+    "date": "2026-06-12T18:00:00",
+    "stadiumId": 16,
+    "stage": "group",
+    "group": "D",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 13
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 14
+    }
+  },
+  {
+    "id": 5,
+    "date": "2026-06-13T21:00:00",
+    "stadiumId": 9,
+    "stage": "group",
+    "group": "C",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 11
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 12
+    }
+  },
+  {
+    "id": 6,
+    "date": "2026-06-13T21:00:00",
+    "stadiumId": 13,
+    "stage": "group",
+    "group": "D",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 15
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 16
+    }
+  },
+  {
+    "id": 7,
+    "date": "2026-06-13T18:00:00",
+    "stadiumId": 11,
+    "stage": "group",
+    "group": "C",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 9
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 10
+    }
+  },
+  {
+    "id": 8,
+    "date": "2026-06-13T12:00:00",
+    "stadiumId": 15,
+    "stage": "group",
+    "group": "B",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 7
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 8
+    }
+  },
+  {
+    "id": 9,
+    "date": "2026-06-14T19:00:00",
+    "stadiumId": 10,
+    "stage": "group",
+    "group": "E",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 19
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 20
+    }
+  },
+  {
+    "id": 10,
+    "date": "2026-06-14T12:00:00",
+    "stadiumId": 5,
+    "stage": "group",
+    "group": "E",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 17
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 18
+    }
+  },
+  {
+    "id": 11,
+    "date": "2026-06-14T15:00:00",
+    "stadiumId": 4,
+    "stage": "group",
+    "group": "F",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 21
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 22
+    }
+  },
+  {
+    "id": 12,
+    "date": "2026-06-14T20:00:00",
+    "stadiumId": 3,
+    "stage": "group",
+    "group": "F",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 23
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 24
+    }
+  },
+  {
+    "id": 13,
+    "date": "2026-06-15T18:00:00",
+    "stadiumId": 16,
+    "stage": "group",
+    "group": "G",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 27
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 28
+    }
+  },
+  {
+    "id": 14,
+    "date": "2026-06-15T12:00:00",
+    "stadiumId": 7,
+    "stage": "group",
+    "group": "H",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 29
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 30
+    }
+  },
+  {
+    "id": 15,
+    "date": "2026-06-15T12:00:00",
+    "stadiumId": 14,
+    "stage": "group",
+    "group": "G",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 25
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 26
+    }
+  },
+  {
+    "id": 16,
+    "date": "2026-06-15T18:00:00",
+    "stadiumId": 8,
+    "stage": "group",
+    "group": "H",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 31
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 32
+    }
+  },
+  {
+    "id": 17,
+    "date": "2026-06-16T15:00:00",
+    "stadiumId": 11,
+    "stage": "group",
+    "group": "I",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 33
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 34
+    }
+  },
+  {
+    "id": 18,
+    "date": "2026-06-16T18:00:00",
+    "stadiumId": 9,
+    "stage": "group",
+    "group": "I",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 35
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 36
+    }
+  },
+  {
+    "id": 19,
+    "date": "2026-06-16T20:00:00",
+    "stadiumId": 6,
+    "stage": "group",
+    "group": "J",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 37
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 38
+    }
+  },
+  {
+    "id": 20,
+    "date": "2026-06-16T21:00:00",
+    "stadiumId": 15,
+    "stage": "group",
+    "group": "J",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 39
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 40
+    }
+  },
+  {
+    "id": 21,
+    "date": "2026-06-17T12:00:00",
+    "stadiumId": 5,
+    "stage": "group",
+    "group": "K",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 41
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 42
+    }
+  },
+  {
+    "id": 22,
+    "date": "2026-06-17T15:00:00",
+    "stadiumId": 4,
+    "stage": "group",
+    "group": "L",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 45
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 46
+    }
+  },
+  {
+    "id": 23,
+    "date": "2026-06-17T20:00:00",
+    "stadiumId": 1,
+    "stage": "group",
+    "group": "K",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 43
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 44
+    }
+  },
+  {
+    "id": 24,
+    "date": "2026-06-17T19:00:00",
+    "stadiumId": 12,
+    "stage": "group",
+    "group": "L",
+    "matchday": 1,
+    "home": {
+      "kind": "team",
+      "teamId": 47
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 48
+    }
+  },
+  {
+    "id": 25,
+    "date": "2026-06-18T19:00:00",
+    "stadiumId": 2,
+    "stage": "group",
+    "group": "A",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 1
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 3
+    }
+  },
+  {
+    "id": 26,
+    "date": "2026-06-18T12:00:00",
+    "stadiumId": 16,
+    "stage": "group",
+    "group": "B",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 8
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 6
+    }
+  },
+  {
+    "id": 27,
+    "date": "2026-06-18T15:00:00",
+    "stadiumId": 13,
+    "stage": "group",
+    "group": "B",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 5
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 7
+    }
+  },
+  {
+    "id": 28,
+    "date": "2026-06-18T12:00:00",
+    "stadiumId": 7,
+    "stage": "group",
+    "group": "A",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 4
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 2
+    }
+  },
+  {
+    "id": 29,
+    "date": "2026-06-19T21:00:00",
+    "stadiumId": 10,
+    "stage": "group",
+    "group": "C",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 9
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 11
+    }
+  },
+  {
+    "id": 30,
+    "date": "2026-06-19T18:00:00",
+    "stadiumId": 9,
+    "stage": "group",
+    "group": "C",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 12
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 10
+    }
+  },
+  {
+    "id": 31,
+    "date": "2026-06-19T12:00:00",
+    "stadiumId": 14,
+    "stage": "group",
+    "group": "D",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 13
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 15
+    }
+  },
+  {
+    "id": 32,
+    "date": "2026-06-19T20:00:00",
+    "stadiumId": 15,
+    "stage": "group",
+    "group": "D",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 16
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 14
+    }
+  },
+  {
+    "id": 33,
+    "date": "2026-06-20T16:00:00",
+    "stadiumId": 12,
+    "stage": "group",
+    "group": "E",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 17
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 19
+    }
+  },
+  {
+    "id": 34,
+    "date": "2026-06-20T19:00:00",
+    "stadiumId": 6,
+    "stage": "group",
+    "group": "E",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 20
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 18
+    }
+  },
+  {
+    "id": 35,
+    "date": "2026-06-20T12:00:00",
+    "stadiumId": 5,
+    "stage": "group",
+    "group": "F",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 21
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 23
+    }
+  },
+  {
+    "id": 36,
+    "date": "2026-06-20T22:00:00",
+    "stadiumId": 3,
+    "stage": "group",
+    "group": "F",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 24
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 22
+    }
+  },
+  {
+    "id": 37,
+    "date": "2026-06-21T12:00:00",
+    "stadiumId": 16,
+    "stage": "group",
+    "group": "G",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 25
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 27
+    }
+  },
+  {
+    "id": 38,
+    "date": "2026-06-21T18:00:00",
+    "stadiumId": 13,
+    "stage": "group",
+    "group": "G",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 28
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 26
+    }
+  },
+  {
+    "id": 39,
+    "date": "2026-06-21T12:00:00",
+    "stadiumId": 7,
+    "stage": "group",
+    "group": "H",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 29
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 31
+    }
+  },
+  {
+    "id": 40,
+    "date": "2026-06-21T18:00:00",
+    "stadiumId": 8,
+    "stage": "group",
+    "group": "H",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 32
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 30
+    }
+  },
+  {
+    "id": 41,
+    "date": "2026-06-22T17:00:00",
+    "stadiumId": 10,
+    "stage": "group",
+    "group": "I",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 33
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 35
+    }
+  },
+  {
+    "id": 42,
+    "date": "2026-06-22T20:00:00",
+    "stadiumId": 11,
+    "stage": "group",
+    "group": "I",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 36
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 34
+    }
+  },
+  {
+    "id": 43,
+    "date": "2026-06-22T12:00:00",
+    "stadiumId": 4,
+    "stage": "group",
+    "group": "J",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 37
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 39
+    }
+  },
+  {
+    "id": 44,
+    "date": "2026-06-22T20:00:00",
+    "stadiumId": 15,
+    "stage": "group",
+    "group": "J",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 40
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 38
+    }
+  },
+  {
+    "id": 45,
+    "date": "2026-06-23T12:00:00",
+    "stadiumId": 5,
+    "stage": "group",
+    "group": "K",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 41
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 43
+    }
+  },
+  {
+    "id": 46,
+    "date": "2026-06-23T19:00:00",
+    "stadiumId": 12,
+    "stage": "group",
+    "group": "L",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 48
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 46
+    }
+  },
+  {
+    "id": 47,
+    "date": "2026-06-23T20:00:00",
+    "stadiumId": 2,
+    "stage": "group",
+    "group": "K",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 44
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 42
+    }
+  },
+  {
+    "id": 48,
+    "date": "2026-06-23T16:00:00",
+    "stadiumId": 9,
+    "stage": "group",
+    "group": "L",
+    "matchday": 2,
+    "home": {
+      "kind": "team",
+      "teamId": 45
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 47
+    }
+  },
+  {
+    "id": 49,
+    "date": "2026-06-24T18:00:00",
+    "stadiumId": 8,
+    "stage": "group",
+    "group": "C",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 12
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 9
+    }
+  },
+  {
+    "id": 50,
+    "date": "2026-06-24T18:00:00",
+    "stadiumId": 7,
+    "stage": "group",
+    "group": "C",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 10
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 11
+    }
+  },
+  {
+    "id": 51,
+    "date": "2026-06-24T19:00:00",
+    "stadiumId": 3,
+    "stage": "group",
+    "group": "A",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 2
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 3
+    }
+  },
+  {
+    "id": 52,
+    "date": "2026-06-24T19:00:00",
+    "stadiumId": 1,
+    "stage": "group",
+    "group": "A",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 4
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 1
+    }
+  },
+  {
+    "id": 53,
+    "date": "2026-06-24T12:00:00",
+    "stadiumId": 14,
+    "stage": "group",
+    "group": "B",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 6
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 7
+    }
+  },
+  {
+    "id": 54,
+    "date": "2026-06-24T12:00:00",
+    "stadiumId": 13,
+    "stage": "group",
+    "group": "B",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 8
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 5
+    }
+  },
+  {
+    "id": 55,
+    "date": "2026-06-25T16:00:00",
+    "stadiumId": 10,
+    "stage": "group",
+    "group": "E",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 18
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 19
+    }
+  },
+  {
+    "id": 56,
+    "date": "2026-06-25T16:00:00",
+    "stadiumId": 11,
+    "stage": "group",
+    "group": "E",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 20
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 17
+    }
+  },
+  {
+    "id": 57,
+    "date": "2026-06-25T19:00:00",
+    "stadiumId": 15,
+    "stage": "group",
+    "group": "D",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 14
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 15
+    }
+  },
+  {
+    "id": 58,
+    "date": "2026-06-25T19:00:00",
+    "stadiumId": 16,
+    "stage": "group",
+    "group": "D",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 16
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 13
+    }
+  },
+  {
+    "id": 59,
+    "date": "2026-06-25T18:00:00",
+    "stadiumId": 4,
+    "stage": "group",
+    "group": "F",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 22
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 23
+    }
+  },
+  {
+    "id": 60,
+    "date": "2026-06-25T18:00:00",
+    "stadiumId": 6,
+    "stage": "group",
+    "group": "F",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 24
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 21
+    }
+  },
+  {
+    "id": 61,
+    "date": "2026-06-26T15:00:00",
+    "stadiumId": 12,
+    "stage": "group",
+    "group": "I",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 34
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 35
+    }
+  },
+  {
+    "id": 62,
+    "date": "2026-06-26T15:00:00",
+    "stadiumId": 9,
+    "stage": "group",
+    "group": "I",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 36
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 33
+    }
+  },
+  {
+    "id": 63,
+    "date": "2026-06-26T20:00:00",
+    "stadiumId": 14,
+    "stage": "group",
+    "group": "G",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 26
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 27
+    }
+  },
+  {
+    "id": 64,
+    "date": "2026-06-26T20:00:00",
+    "stadiumId": 13,
+    "stage": "group",
+    "group": "G",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 28
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 25
+    }
+  },
+  {
+    "id": 65,
+    "date": "2026-06-26T19:00:00",
+    "stadiumId": 5,
+    "stage": "group",
+    "group": "H",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 30
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 31
+    }
+  },
+  {
+    "id": 66,
+    "date": "2026-06-26T18:00:00",
+    "stadiumId": 2,
+    "stage": "group",
+    "group": "H",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 32
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 29
+    }
+  },
+  {
+    "id": 67,
+    "date": "2026-06-27T17:00:00",
+    "stadiumId": 11,
+    "stage": "group",
+    "group": "L",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 48
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 45
+    }
+  },
+  {
+    "id": 68,
+    "date": "2026-06-27T17:00:00",
+    "stadiumId": 10,
+    "stage": "group",
+    "group": "L",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 46
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 47
+    }
+  },
+  {
+    "id": 69,
+    "date": "2026-06-27T21:00:00",
+    "stadiumId": 6,
+    "stage": "group",
+    "group": "J",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 38
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 39
+    }
+  },
+  {
+    "id": 70,
+    "date": "2026-06-27T21:00:00",
+    "stadiumId": 4,
+    "stage": "group",
+    "group": "J",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 40
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 37
+    }
+  },
+  {
+    "id": 71,
+    "date": "2026-06-27T19:30:00",
+    "stadiumId": 8,
+    "stage": "group",
+    "group": "K",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 44
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 41
+    }
+  },
+  {
+    "id": 72,
+    "date": "2026-06-27T19:30:00",
+    "stadiumId": 7,
+    "stage": "group",
+    "group": "K",
+    "matchday": 3,
+    "home": {
+      "kind": "team",
+      "teamId": 42
+    },
+    "away": {
+      "kind": "team",
+      "teamId": 43
+    }
+  },
+  {
+    "id": 73,
+    "date": "2026-06-28T12:00:00",
+    "stadiumId": 16,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "runner-group",
+      "group": "A"
+    },
+    "away": {
+      "kind": "runner-group",
+      "group": "B"
+    }
+  },
+  {
+    "id": 74,
+    "date": "2026-06-29T16:30:00",
+    "stadiumId": 9,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "E"
+    },
+    "away": {
+      "kind": "third",
+      "winnerGroup": "E",
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "F"
+      ]
+    }
+  },
+  {
+    "id": 75,
+    "date": "2026-06-29T19:00:00",
+    "stadiumId": 3,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "F"
+    },
+    "away": {
+      "kind": "runner-group",
+      "group": "C"
+    }
+  },
+  {
+    "id": 76,
+    "date": "2026-06-29T12:00:00",
+    "stadiumId": 5,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "C"
+    },
+    "away": {
+      "kind": "runner-group",
+      "group": "F"
+    }
+  },
+  {
+    "id": 77,
+    "date": "2026-06-30T17:00:00",
+    "stadiumId": 11,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "I"
+    },
+    "away": {
+      "kind": "third",
+      "winnerGroup": "I",
+      "groups": [
+        "C",
+        "D",
+        "F",
+        "G",
+        "H"
+      ]
+    }
+  },
+  {
+    "id": 78,
+    "date": "2026-06-30T12:00:00",
+    "stadiumId": 4,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "runner-group",
+      "group": "E"
+    },
+    "away": {
+      "kind": "runner-group",
+      "group": "I"
+    }
+  },
+  {
+    "id": 79,
+    "date": "2026-06-30T19:00:00",
+    "stadiumId": 1,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "A"
+    },
+    "away": {
+      "kind": "third",
+      "winnerGroup": "A",
+      "groups": [
+        "C",
+        "E",
+        "F",
+        "H",
+        "I"
+      ]
+    }
+  },
+  {
+    "id": 80,
+    "date": "2026-07-01T12:00:00",
+    "stadiumId": 7,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "L"
+    },
+    "away": {
+      "kind": "third",
+      "winnerGroup": "L",
+      "groups": [
+        "E",
+        "H",
+        "I",
+        "J",
+        "K"
+      ]
+    }
+  },
+  {
+    "id": 81,
+    "date": "2026-07-01T17:00:00",
+    "stadiumId": 15,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "D"
+    },
+    "away": {
+      "kind": "third",
+      "winnerGroup": "D",
+      "groups": [
+        "B",
+        "E",
+        "F",
+        "I",
+        "J"
+      ]
+    }
+  },
+  {
+    "id": 82,
+    "date": "2026-07-01T13:00:00",
+    "stadiumId": 14,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "G"
+    },
+    "away": {
+      "kind": "third",
+      "winnerGroup": "G",
+      "groups": [
+        "A",
+        "E",
+        "H",
+        "I",
+        "J"
+      ]
+    }
+  },
+  {
+    "id": 83,
+    "date": "2026-07-02T19:00:00",
+    "stadiumId": 12,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "runner-group",
+      "group": "K"
+    },
+    "away": {
+      "kind": "runner-group",
+      "group": "L"
+    }
+  },
+  {
+    "id": 84,
+    "date": "2026-07-02T12:00:00",
+    "stadiumId": 16,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "H"
+    },
+    "away": {
+      "kind": "runner-group",
+      "group": "J"
+    }
+  },
+  {
+    "id": 85,
+    "date": "2026-07-02T20:00:00",
+    "stadiumId": 13,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "B"
+    },
+    "away": {
+      "kind": "third",
+      "winnerGroup": "B",
+      "groups": [
+        "E",
+        "F",
+        "G",
+        "I",
+        "J"
+      ]
+    }
+  },
+  {
+    "id": 86,
+    "date": "2026-07-03T18:00:00",
+    "stadiumId": 8,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "J"
+    },
+    "away": {
+      "kind": "runner-group",
+      "group": "H"
+    }
+  },
+  {
+    "id": 87,
+    "date": "2026-07-03T20:30:00",
+    "stadiumId": 6,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "winner-group",
+      "group": "K"
+    },
+    "away": {
+      "kind": "third",
+      "winnerGroup": "K",
+      "groups": [
+        "D",
+        "E",
+        "I",
+        "J",
+        "L"
+      ]
+    }
+  },
+  {
+    "id": 88,
+    "date": "2026-07-03T13:00:00",
+    "stadiumId": 4,
+    "stage": "r32",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "runner-group",
+      "group": "D"
+    },
+    "away": {
+      "kind": "runner-group",
+      "group": "G"
+    }
+  },
+  {
+    "id": 89,
+    "date": "2026-07-04T17:00:00",
+    "stadiumId": 10,
+    "stage": "r16",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 74
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 77
+    }
+  },
+  {
+    "id": 90,
+    "date": "2026-07-04T12:00:00",
+    "stadiumId": 5,
+    "stage": "r16",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 73
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 75
+    }
+  },
+  {
+    "id": 91,
+    "date": "2026-07-05T16:00:00",
+    "stadiumId": 11,
+    "stage": "r16",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 76
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 78
+    }
+  },
+  {
+    "id": 92,
+    "date": "2026-07-05T18:00:00",
+    "stadiumId": 1,
+    "stage": "r16",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 79
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 80
+    }
+  },
+  {
+    "id": 93,
+    "date": "2026-07-06T14:00:00",
+    "stadiumId": 4,
+    "stage": "r16",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 83
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 84
+    }
+  },
+  {
+    "id": 94,
+    "date": "2026-07-06T17:00:00",
+    "stadiumId": 14,
+    "stage": "r16",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 81
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 82
+    }
+  },
+  {
+    "id": 95,
+    "date": "2026-07-07T12:00:00",
+    "stadiumId": 7,
+    "stage": "r16",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 86
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 88
+    }
+  },
+  {
+    "id": 96,
+    "date": "2026-07-07T13:00:00",
+    "stadiumId": 13,
+    "stage": "r16",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 85
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 87
+    }
+  },
+  {
+    "id": 97,
+    "date": "2026-07-09T16:00:00",
+    "stadiumId": 9,
+    "stage": "qf",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 89
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 90
+    }
+  },
+  {
+    "id": 98,
+    "date": "2026-07-10T12:00:00",
+    "stadiumId": 16,
+    "stage": "qf",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 93
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 94
+    }
+  },
+  {
+    "id": 99,
+    "date": "2026-07-11T17:00:00",
+    "stadiumId": 8,
+    "stage": "qf",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 91
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 92
+    }
+  },
+  {
+    "id": 100,
+    "date": "2026-07-11T20:00:00",
+    "stadiumId": 6,
+    "stage": "qf",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 95
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 96
+    }
+  },
+  {
+    "id": 101,
+    "date": "2026-07-14T14:00:00",
+    "stadiumId": 4,
+    "stage": "sf",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 97
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 98
+    }
+  },
+  {
+    "id": 102,
+    "date": "2026-07-15T15:00:00",
+    "stadiumId": 7,
+    "stage": "sf",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 99
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 100
+    }
+  },
+  {
+    "id": 103,
+    "date": "2026-07-18T17:00:00",
+    "stadiumId": 8,
+    "stage": "third",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-loser",
+      "match": 101
+    },
+    "away": {
+      "kind": "match-loser",
+      "match": 102
+    }
+  },
+  {
+    "id": 104,
+    "date": "2026-07-19T15:00:00",
+    "stadiumId": 11,
+    "stage": "final",
+    "group": null,
+    "matchday": null,
+    "home": {
+      "kind": "match-winner",
+      "match": 101
+    },
+    "away": {
+      "kind": "match-winner",
+      "match": 102
+    }
+  }
+]

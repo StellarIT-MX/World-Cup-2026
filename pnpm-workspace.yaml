@@ -1,0 +1,4 @@
+# pnpm: dependencias autorizadas a ejecutar scripts de build (feature de seguridad de pnpm).
+# esbuild (usado por vite/vitest) necesita su script para preparar su binario nativo.
+allowBuilds:
+  esbuild: true
