@@ -172,11 +172,12 @@ for (const g of games) {
   if (g.type !== 'group') continue;
   const id = String(num(g.id));
   const finished = isTrue(g.finished);
-  if (!finished) continue;
+  const live = g.time_elapsed === 'live';
+  if (!finished && !live) continue;
   results[id] = {
     homeGoals: num(g.home_score) ?? 0,
     awayGoals: num(g.away_score) ?? 0,
-    finished: true,
+    finished,
   };
 }
 

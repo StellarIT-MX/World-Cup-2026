@@ -108,6 +108,9 @@
 .match-list { list-style: none; margin: 10px 0 0; padding: 8px 0 0; border-top: 1px dashed var(--line); display: flex; flex-direction: column; gap: 3px; }
 .match-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 8px; font-size: 12.5px; padding: 3px 2px; }
 .match-row--pending { opacity: .72; }
+.match-row--live { }
+.mr-live-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #e63946; animation: live-pulse 1.2s ease-in-out infinite; }
+@keyframes live-pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
 .mr-team { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .mr-home { justify-content: flex-end; }
 .mr-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

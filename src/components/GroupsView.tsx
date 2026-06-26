@@ -17,6 +17,7 @@ function MatchRow({
   const home = teamById.get(fixture.home.teamId);
   const away = teamById.get(fixture.away.teamId);
   const played = result?.finished;
+  const live = !played && result != null && result.homeGoals != null && result.awayGoals != null;
   const time = fixture.date ? formatMatchTime(fixture.date, fixture.stadiumId) : '';
 
   const onChange = (side: 'h' | 'a', raw: string) => {
@@ -32,7 +33,7 @@ function MatchRow({
   };
 
   return (
-    <li className={`match-row ${played ? '' : 'match-row--pending'}`}>
+    <li className={`match-row ${played ? '' : live ? 'match-row--live' : 'match-row--pending'}`}>
       <span className="mr-team mr-home">
         <span className="mr-name">{home?.name ?? '?'}</span>
         <Flag team={home} />
@@ -51,7 +52,11 @@ function MatchRow({
         </span>
       ) : (
         <span className="mr-score">
-          {played ? `${result!.homeGoals} - ${result!.awayGoals}` : <span className="mr-time">{time}</span>}
+          {played
+            ? `${result!.homeGoals} - ${result!.awayGoals}`
+            : live
+              ? <><span className="mr-live-dot" />  {result!.homeGoals} - {result!.awayGoals}</>
+              : <span className="mr-time">{time}</span>}
         </span>
       )}
       <span className="mr-team mr-away">
