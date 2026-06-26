@@ -1,10 +1,20 @@
+import type { GroupLetter } from '../domain/types';
 import type { UseTournament } from '../hooks/useTournament';
 import { Flag } from './Flag';
+import { formatMatchTime } from '../utils/dateUtils';
 
 export function ThirdPlaceView({ t }: { t: UseTournament }) {
   if (!t.state) return null;
   const { thirds, allocation } = t.state;
   const { teamById, allGroupsComplete } = t;
+
+  // Mapa de grupo ganador → fixture r32 correspondiente
+  const r32ByWinner = new Map<string, { date: string | null; stadiumId: number }>();
+  for (const f of t.data?.fixtures ?? []) {
+    if (f.stage !== 'r32') continue;
+    if (f.home.kind === 'winner-group') r32ByWinner.set(f.home.group, f);
+    if (f.away.kind === 'winner-group') r32ByWinner.set(f.away.group, f);
+  }
 
   return (
     <div className="thirds-wrap">
@@ -53,19 +63,37 @@ export function ThirdPlaceView({ t }: { t: UseTournament }) {
               Según el Anexo C del reglamento, cada tercero enfrenta a:
             </p>
             <table className="standings alloc-table">
-              <thead><tr><th>Ganador de grupo</th><th>enfrenta al 3.º de</th><th>= equipo</th></tr></thead>
+              <thead>
+                <tr>
+                  <th>Ganador de grupo</th>
+                  <th>enfrenta al 3.º de</th>
+                  <th>= equipo</th>
+                  <th>Fecha (GDL)</th>
+                </tr>
+              </thead>
               <tbody>
                 {Object.entries(allocation.byWinnerGroup)
                   .sort(([a], [b]) => a.localeCompare(b))
-                  .map(([winner, info]) => (
-                    <tr key={winner}>
-                      <td className="pts">1.º {winner}</td>
-                      <td>Grupo {info!.group}</td>
-                      <td className="ta-l team-cell">
-                        <Flag team={teamById.get(info!.teamId)} /> <span>{teamById.get(info!.teamId)?.name}</span>
-                      </td>
-                    </tr>
-                  ))}
+                  .map(([winner, info]) => {
+                    const fixture = r32ByWinner.get(winner);
+                    const dateStr = fixture?.date
+                      ? formatMatchTime(fixture.date, fixture.stadiumId)
+                      : '—';
+                    const winnerRow = t.state?.standings[winner as GroupLetter]?.find((r) => r.rank === 1);
+                    const winnerTeam = winnerRow ? teamById.get(winnerRow.teamId) : undefined;
+                    return (
+                      <tr key={winner}>
+                        <td className="pts team-cell">
+                          <Flag team={winnerTeam} /><span>1.º {winner}</span>
+                        </td>
+                        <td>Grupo {info!.group}</td>
+                        <td className="ta-l team-cell">
+                          <Flag team={teamById.get(info!.teamId)} /> <span>{teamById.get(info!.teamId)?.name}</span>
+                        </td>
+                        <td className="match-time">{dateStr}</td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           </>

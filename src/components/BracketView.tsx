@@ -3,6 +3,7 @@ import { STAGE_LABEL } from '../domain/bracket';
 import type { Stage } from '../domain/types';
 import type { UseTournament } from '../hooks/useTournament';
 import { Flag } from './Flag';
+import { formatMatchTime } from '../utils/dateUtils';
 
 const COLUMN_STAGES: Stage[] = ['r32', 'r16', 'qf', 'sf', 'final'];
 
@@ -47,9 +48,11 @@ function MatchCard({ m, t }: { m: BracketMatch; t: UseTournament }) {
   const homePens = r?.homePens != null && r?.awayPens != null ? r.homePens : null;
   const awayPens = r?.homePens != null && r?.awayPens != null ? r.awayPens : null;
 
+  const matchTime = m.date ? formatMatchTime(m.date, m.stadiumId) : null;
+
   return (
     <div className={`ko-match${decided ? ' is-decided' : ''}`}>
-      <div className="ko-id">M{m.id}</div>
+      <div className="ko-id">M{m.id}{matchTime && <span className="ko-date">{matchTime}</span>}</div>
       <Slot slot={m.home} isWinner={m.winnerTeamId === m.home.teamId && decided}
         isLoser={decided && m.loserTeamId === m.home.teamId}
         goals={r?.finished ? r.homeGoals : null} pens={homePens}

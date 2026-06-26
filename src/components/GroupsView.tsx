@@ -2,6 +2,7 @@ import type { Fixture, GroupLetter, MatchResult, StandingRow, Team } from '../do
 import { GROUPS, groupComplete } from '../domain/standings';
 import type { UseTournament } from '../hooks/useTournament';
 import { Flag } from './Flag';
+import { formatMatchTime } from '../utils/dateUtils';
 
 function MatchRow({
   fixture, result, teamById, simEnabled, setOverride,
@@ -16,7 +17,7 @@ function MatchRow({
   const home = teamById.get(fixture.home.teamId);
   const away = teamById.get(fixture.away.teamId);
   const played = result?.finished;
-  const time = fixture.date ? fixture.date.slice(5, 16).replace('T', ' ') : '';
+  const time = fixture.date ? formatMatchTime(fixture.date, fixture.stadiumId) : '';
 
   const onChange = (side: 'h' | 'a', raw: string) => {
     const value = raw.replace(/\D/g, '');
