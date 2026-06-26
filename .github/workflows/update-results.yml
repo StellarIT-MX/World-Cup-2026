@@ -1,0 +1,60 @@
+name: Update match results
+
+on:
+  schedule:
+    - cron: '0,20 12-23 * * *'  # cada 20 min, 12:00–23:20 UTC (horario de partidos)
+  workflow_dispatch:               # disparo manual desde la pestaña Actions en GitHub
+
+permissions:
+  contents: write                  # permite que el bot haga push a main
+
+jobs:
+  update-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm data
+
+      - name: Commit si hubo cambios
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/results.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en results.json — se omite el commit."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "chore: update match results [skip ci]"
+            git push
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      # Solo sube el archivo si hubo cambios reales.
+      # results.json es un asset estático — no requiere rebuild de la app.
+      - name: Upload results.json a Hostinger
+        if: steps.commit.outputs.changed == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./public/data/
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
+          include: results.json
