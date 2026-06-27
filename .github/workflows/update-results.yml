@@ -2,7 +2,8 @@ name: Update match results
 
 on:
   schedule:
-    - cron: '0,20,40 12-23 * * *'  # cada 20 min, 12:00–23:40 UTC (horario de partidos)
+    - cron: '0,20,40 16-23 * * *'  # cada 20 min, 10:00–17:40 GMT-6 (mañana/tarde)
+    - cron: '0,20,40 0-5 * * *'   # cada 20 min, 18:00–23:40 GMT-6 (noche, cubre hasta ~11:40 PM)
   workflow_dispatch:               # disparo manual desde la pestaña Actions en GitHub
 
 jobs:
@@ -43,15 +44,13 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      # Solo sube el archivo si hubo cambios reales.
-      # results.json es un asset estático — no requiere rebuild de la app.
+      # Siempre sube el archivo — así un fallo de FTP previo no deja producción desactualizada.
       - name: Upload results.json a Hostinger
-        if: steps.commit.outputs.changed == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./public/data/
-          server-dir: ${{ vars.FTP_SERVER_DIR }}
-          include: results.json
+          server-dir: ${{ vars.FTP_SERVER_DIR }}/
+          exclude: teams.json|fixtures.json|stadiums.json|annexe-c.json
