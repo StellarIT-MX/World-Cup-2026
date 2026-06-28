@@ -340,16 +340,14 @@
     "finished": true
   },
   "69": {
-    "homeGoals": 0,
-    "awayGoals": 1,
-    "finished": false,
-    "live": true
+    "homeGoals": 3,
+    "awayGoals": 3,
+    "finished": true
   },
   "70": {
-    "homeGoals": 0,
-    "awayGoals": 2,
-    "finished": false,
-    "live": true
+    "homeGoals": 1,
+    "awayGoals": 3,
+    "finished": true
   },
   "71": {
     "homeGoals": 0,
