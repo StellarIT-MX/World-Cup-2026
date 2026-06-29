@@ -95,6 +95,27 @@ async function load(name, endpoint) {
   return JSON.parse(readFileSync(cacheFile, 'utf8'));
 }
 
+async function loadUrl(name, url) {
+  const cacheFile = join(CACHE, `raw_${name}.json`);
+  if (!OFFLINE) {
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const json = await res.json();
+      mkdirSync(CACHE, { recursive: true });
+      writeFileSync(cacheFile, JSON.stringify(json));
+      return json;
+    } catch (e) {
+      console.warn(`! fetch ${url} fallo (${e.message}); uso cache local`);
+    }
+  }
+  if (!existsSync(cacheFile)) {
+    console.warn(`! sin cache para ${name}; omitiendo`);
+    return null;
+  }
+  return JSON.parse(readFileSync(cacheFile, 'utf8'));
+}
+
 const num = (v) => (v === null || v === undefined || v === '' ? null : Number(v));
 const isTrue = (v) => String(v).toUpperCase() === 'TRUE';
 
@@ -112,10 +133,13 @@ function writeJson(file, data) {
 }
 
 // ---------- Main ----------
-const [teamsRaw, stadiumsRaw, gamesRaw] = await Promise.all([
+const OPENFOOTBALL_URL = 'https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json';
+
+const [teamsRaw, stadiumsRaw, gamesRaw, openFootballRaw] = await Promise.all([
   load('teams', '/get/teams'),
   load('stadiums', '/get/stadiums'),
   load('games', '/get/games'),
+  loadUrl('openfootball', OPENFOOTBALL_URL),
 ]);
 
 const teams = teamsRaw.teams.map((x) => ({
@@ -162,24 +186,56 @@ const fixtures = games.map((g) => {
 });
 
 // results.json: marcadores conocidos. Fuente de la verdad editable.
-// Solo pre-llenamos partidos de grupo terminados (la eliminatoria se resuelve por logica).
+// Fuentes:
+//   - worldcup26.ir  -> fase de grupos (con soporte live) + KO sin penaltis
+//   - OpenFootball   -> KO con penaltis (score.p), toma precedencia en eliminatoria
 let results = {};
 const resultsPath = join(DATA, 'results.json');
 if (!REGEN_ALL && existsSync(resultsPath)) {
   results = JSON.parse(readFileSync(resultsPath, 'utf8')); // preservar correcciones manuales
 }
+
+// Fase 1: worldcup26.ir (grupos + KO sin penaltis)
 for (const g of games) {
-  if (g.type !== 'group') continue;
   const id = String(num(g.id));
   const finished = isTrue(g.finished);
   const live = g.time_elapsed === 'live';
   if (!finished && !live) continue;
+  const prev = results[id];
+  const homeGoals = num(g.home_score) ?? 0;
+  const awayGoals = num(g.away_score) ?? 0;
+  const hasPens = prev?.homePens != null;
+  const scoresMatch = prev?.homeGoals === homeGoals && prev?.awayGoals === awayGoals;
   results[id] = {
-    homeGoals: num(g.home_score) ?? 0,
-    awayGoals: num(g.away_score) ?? 0,
+    homeGoals,
+    awayGoals,
     finished,
     ...(live && !finished ? { live: true } : {}),
+    ...(hasPens && scoresMatch ? { homePens: prev.homePens, awayPens: prev.awayPens } : {}),
   };
+}
+
+// Fase 2: OpenFootball -> KO con penaltis (toma precedencia sobre worldcup26.ir en eliminatoria)
+if (openFootballRaw?.matches) {
+  let ofKo = 0, ofPens = 0;
+  for (const m of openFootballRaw.matches) {
+    if (!m.num || !m.score) continue; // sin num = grupo; sin score = no jugado
+    const id = String(m.num);
+    const ft = m.score.ft;
+    if (!ft) continue;
+    const homeGoals = ft[0];
+    const awayGoals = ft[1];
+    const p = m.score.p;
+    results[id] = {
+      homeGoals,
+      awayGoals,
+      finished: true,
+      ...(p ? { homePens: p[0], awayPens: p[1] } : {}),
+    };
+    ofKo++;
+    if (p) ofPens++;
+  }
+  if (ofKo > 0) console.log(`  OpenFootball: ${ofKo} KO results (${ofPens} con penaltis)`);
 }
 
 console.log('Escribiendo datos:');

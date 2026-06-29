@@ -55,11 +55,11 @@ function MatchCard({ m, t }: { m: BracketMatch; t: UseTournament }) {
       <div className="ko-id">M{m.id}{matchTime && <span className="ko-date">{matchTime}</span>}</div>
       <Slot slot={m.home} isWinner={m.winnerTeamId === m.home.teamId && decided}
         isLoser={decided && m.loserTeamId === m.home.teamId}
-        goals={r?.finished ? r.homeGoals : null} pens={homePens}
+        goals={r?.finished || r?.live ? r.homeGoals : null} pens={homePens}
         canPick={canPick} onPick={() => pick('home')} />
       <Slot slot={m.away} isWinner={m.winnerTeamId === m.away.teamId && decided}
         isLoser={decided && m.loserTeamId === m.away.teamId}
-        goals={r?.finished ? r.awayGoals : null} pens={awayPens}
+        goals={r?.finished || r?.live ? r.awayGoals : null} pens={awayPens}
         canPick={canPick} onPick={() => pick('away')} />
     </div>
   );
