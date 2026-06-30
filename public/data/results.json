@@ -382,5 +382,11 @@
     "homeGoals": 2,
     "awayGoals": 1,
     "finished": true
+  },
+  "78": {
+    "homeGoals": 0,
+    "awayGoals": 1,
+    "finished": false,
+    "live": true
   }
 }
