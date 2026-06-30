@@ -386,8 +386,7 @@
   "77": {
     "homeGoals": 3,
     "awayGoals": 0,
-    "finished": false,
-    "live": true
+    "finished": true
   },
   "78": {
     "homeGoals": 1,
