@@ -403,6 +403,11 @@
     "awayGoals": 1,
     "finished": true
   },
+  "81": {
+    "homeGoals": 2,
+    "awayGoals": 0,
+    "finished": true
+  },
   "82": {
     "homeGoals": 2,
     "awayGoals": 2,
