@@ -406,7 +406,6 @@
   "82": {
     "homeGoals": 2,
     "awayGoals": 2,
-    "finished": false,
-    "live": true
+    "finished": true
   }
 }
