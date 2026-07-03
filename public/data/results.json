@@ -414,10 +414,9 @@
     "finished": true
   },
   "83": {
-    "homeGoals": 0,
-    "awayGoals": 0,
-    "finished": false,
-    "live": true
+    "homeGoals": 2,
+    "awayGoals": 1,
+    "finished": true
   },
   "84": {
     "homeGoals": 3,
