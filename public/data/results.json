@@ -431,7 +431,8 @@
   "88": {
     "homeGoals": 1,
     "awayGoals": 1,
-    "finished": false,
-    "live": true
+    "finished": true,
+    "homePens": 2,
+    "awayPens": 4
   }
 }
