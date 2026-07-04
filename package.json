@@ -24,7 +24,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "oxlint": "^1.69.0",
-    "pdf-parse": "^1.1.1",
+    "pdf-parse": "^2.4.5",
     "typescript": "~6.0.2",
     "vite": "^8.1.0",
     "vitest": "^3.2.6"
