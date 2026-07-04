@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Mantiene al día los SHA fijados de las actions; cada PR muestra el diff del release.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ['*']
+
+  # Avisa de CVEs y actualizaciones en dependencias npm (vite, react, etc.).
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      npm-minor-patch:
+        update-types: [minor, patch]
