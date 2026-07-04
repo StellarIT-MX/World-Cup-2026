@@ -6,21 +6,24 @@ on:
     - cron: '0,20,40 0-5 * * *'   # cada 20 min, 18:00–23:40 GMT-6 (noche, cubre hasta ~11:40 PM)
   workflow_dispatch:               # disparo manual desde la pestaña Actions en GitHub
 
+permissions:
+  contents: write
+
 jobs:
   update-results:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           token: ${{ secrets.GH_PAT }}
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
         with:
           version: 11
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'
           cache: 'pnpm'
@@ -46,11 +49,12 @@ jobs:
 
       # Siempre sube el archivo — así un fallo de FTP previo no deja producción desactualizada.
       - name: Upload results.json a Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
           local-dir: ./public/data/
           server-dir: ${{ vars.FTP_SERVER_DIR }}/
           exclude: teams.json|fixtures.json|stadiums.json|annexe-c.json
