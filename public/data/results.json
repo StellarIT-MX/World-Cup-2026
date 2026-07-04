@@ -447,7 +447,7 @@
   },
   "90": {
     "homeGoals": 0,
-    "awayGoals": 0,
+    "awayGoals": 1,
     "finished": false,
     "live": true
   }
