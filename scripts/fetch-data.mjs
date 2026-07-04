@@ -221,7 +221,7 @@ if (openFootballRaw?.matches) {
   for (const m of openFootballRaw.matches) {
     if (!m.num || !m.score) continue; // sin num = grupo; sin score = no jugado
     const id = String(m.num);
-    const ft = m.score.ft;
+    const ft = m.score.et;
     if (!ft) continue;
     const homeGoals = ft[0];
     const awayGoals = ft[1];
