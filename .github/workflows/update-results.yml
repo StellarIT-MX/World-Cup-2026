@@ -19,6 +19,12 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
 
+      # Harden manual del runner (sin actions de terceros): registra toda conexión
+      # saliente nueva a partir de aquí — captura el egress de las actions y scripts
+      # que corren con los secrets en memoria. Es solo LOG: nunca bloquea el build.
+      - name: Armar auditoría de egress
+        run: sudo .github/scripts/egress-guard.sh arm-audit
+
       - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
         with:
           version: 11
@@ -58,3 +64,9 @@ jobs:
           local-dir: ./public/data/
           server-dir: ${{ vars.FTP_SERVER_DIR }}/
           exclude: teams.json|fixtures.json|stadiums.json|annexe-c.json
+
+      # Vuelca los destinos salientes observados durante el job. Corre siempre
+      # (incluso si algo falló) para no perder la evidencia. Solo informa.
+      - name: Reporte de egress
+        if: always()
+        run: sudo .github/scripts/egress-guard.sh report

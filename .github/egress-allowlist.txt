@@ -1,0 +1,24 @@
+# Endpoints salientes legítimos del runner, para egress-guard.sh 'arm-block'.
+# Una entrada por línea: hostname (se resuelve a IPv4 al arrancar) o IP/CIDR literal.
+# En modo AUDIT este archivo no se usa; solo importa para BLOCK.
+#
+# ADVERTENCIA: github/npm/google usan CDNs cuyas IPs rotan, por lo que el modo
+# block puede fallar a mitad del job. Revisa la salida de 'report' antes de activarlo.
+
+# GitHub (checkout, actions, PAT push)
+github.com
+api.github.com
+codeload.github.com
+objects.githubusercontent.com
+raw.githubusercontent.com
+
+# Toolchain (pnpm / node / npm registry)
+registry.npmjs.org
+get.pnpm.io
+nodejs.org
+
+# Fuente de datos del torneo
+worldcup26.ir
+
+# El host FTP de Hostinger vive en el secret FTP_HOST; añádelo aquí manualmente
+# (o su rango) si activas block en el workflow de resultados.
