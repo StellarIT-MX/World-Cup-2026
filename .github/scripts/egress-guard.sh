@@ -82,7 +82,7 @@ report() {
     | sort -u \
     | while read -r dst; do
         ip="${dst%%:*}"
-        ptr="$(getent hosts "$ip" 2>/dev/null | awk '{print $2}' | head -1)"
+        ptr="$(getent hosts "$ip" 2>/dev/null | awk '{print $2}' | head -1 || true)"
         printf '  %-21s %s\n' "$dst" "${ptr:-<sin PTR>}"
       done
   return 0
