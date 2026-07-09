@@ -488,9 +488,8 @@
     "awayPens": 3
   },
   "97": {
-    "homeGoals": 0,
+    "homeGoals": 2,
     "awayGoals": 0,
-    "finished": false,
-    "live": true
+    "finished": true
   }
 }
