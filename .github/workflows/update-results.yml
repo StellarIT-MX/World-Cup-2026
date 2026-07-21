@@ -1,9 +1,6 @@
 name: Update match results
 
 on:
-  schedule:
-    - cron: '0,20,40 16-23 * * *'  # cada 20 min, 10:00–17:40 GMT-6 (mañana/tarde)
-    - cron: '0,20,40 0-5 * * *'   # cada 20 min, 18:00–23:40 GMT-6 (noche, cubre hasta ~11:40 PM)
   workflow_dispatch:               # disparo manual desde la pestaña Actions en GitHub
 
 permissions:
