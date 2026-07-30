@@ -2,3 +2,5 @@
 # esbuild (usado por vite/vitest) necesita su script para preparar su binario nativo.
 allowBuilds:
   esbuild: true
+minimumReleaseAgeExclude:
+  - postcss@8.5.18
