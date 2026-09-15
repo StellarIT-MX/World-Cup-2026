@@ -1,8 +1,6 @@
 name: Security scan
 
 on:
-  schedule:
-    - cron: '0 6,18 * * *'   # 06:00 y 18:00 UTC — dos veces al día
   workflow_dispatch:
 
 permissions:
